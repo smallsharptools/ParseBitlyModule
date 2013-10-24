@@ -33,11 +33,10 @@ OR
 
 Original: https://parse.com/questions/bitlyjs-a-cloud-code-module-for-shortening-long-urls
 
-Revised to use Promise by SmallSharpTools in October, 2013 (http://sstools.co/)
+Revised to use Parse.Promise by SmallSharpTools (http://sstools.co/)
 
-This revision allows for the returned process to be used asynchronously. Below is an exmaple
-of a Cloud Code function which uses this module using a Parse.Promise which makes it easier
-to integrate with functions which requires async activity.
+This revision allows for the returned process to be used asynchronously. Below is an example
+of a Cloud Code function which uses this module asynchronously.
 
     var shortenUrl = function(request, response) {
         
