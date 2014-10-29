@@ -68,7 +68,7 @@ exports.shortenUrl = function(params) {
             url: _bitlyApiUrl + "access_token=" + _bitlyOAuthToken +
                     "&longUrl=" + encodeURIComponent(params.longUrl),
             success: function(httpResponse) {
-                var jsonResponse = eval("(" + httpResponse.text + ')');
+                var jsonResponse = JSON.parse(httpResponse.text);
                 var url = jsonResponse.data.url;
                 if (url) {
                     request.resolve(url);
@@ -89,7 +89,7 @@ exports.shortenUrl = function(params) {
                                             "&longUrl=" + encodeURIComponent(params.longUrl) +
                                             "&format=" + "json",
             success: function(httpResponse) {
-                var jsonResponse = eval("(" + httpResponse.text + ')');
+                var jsonResponse = JSON.parse(httpResponse.text);
                 var url = jsonResponse.data.url;
                 if (url) {
                     request.resolve(url);
